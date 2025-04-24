@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Home Page</title>
+    <link rel="stylesheet" type="text/css" href="SRC/style/style.css">
+    <link rel="icon" href="Assets/favicons/favicon.png" type="image/png" sizes="32x32">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css">
+   
+    <link rel="stylesheet" href="https://unpkg.com/boxicons@latest/css/boxicons.min.css">
+    
+    
+        <!-- 🟨 EmailJS -->
+        <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+        <script type="text/javascript">
+            (function () {
+                emailjs.init("GbMzrOTXH4XXan9dR"); // Your Public API Key
+            })();
+        </script>
+    
+    
+</head>
+
+<body>
+
+    <header class="header" id="header">
+        <a href="index.html" class="logo"><span class="main-icon"></span><span>Junayed</span></a>
+
+        <div class="navbar">
+            <a href="index.html" class="active">Home</a>
+            <a href="SRC/pages/skills.html">Skills</a>
+            <a href="SRC/pages/education.html">Education</a>
+            <a href="SRC/pages/gallery.html">Gallery</a>
+            <a href="SRC/pages/career.html">Career</a>
+            <a href="SRC/pages/hobbies.html">Hobbies</a>
+            <a href="SRC/pages/testimonials.html">Testimonials</a>
+        </div>
+
+        <div class="main">
+            <a href="SRC/pages/contact.html" class="user main-items">
+                <i class="fas fa-envelope cm-icon"></i>Contact Me
+            </a>
+            <div class="main-items menu-icon-container" id="menu-icon-js">
+                <div class="bx bx-menu" id="menu-icon"></div>
+            </div>
+        </div>
+    </header>
+
+    <div class="page">
+        <section class="about" id="about">
+            <div class="about-content">
+                <div class="column right">
+                    <img src="Assets/main-image.jpg" alt="Junayed Image">
+                </div>
+                <div class="column left">
+                    <div class="text">I'm Md. Junayed Bin Karim and I'm a <span id="typed" class="iAm"></span></div>
+                    <section class="about-me">
+                        <h2>About Me</h2>
+                        <p class="intro-text">
+                            I’m <strong>Md. Junayed Bin Karim</strong>, a 22-year-old Web Developer and Computer Science student at Daffodil International University. With a deep passion for building elegant, user-focused websites, I blend creativity and code to bring digital ideas to life.
+                        </p>
+                        <p class="intro-text">
+                            I love working with HTML, CSS, Python, Java, and more. I’m also diving into Machine Learning and Deep Learning to expand my technical toolkit. Whether it's designing front-ends, crafting clean backends, or dreaming up smart systems, I’m always learning and evolving.
+                        </p>
+                        <p class="intro-text">
+                            Outside the screen, I teach younger students, dream of helping underprivileged kids with my project “Your 1 Taka = A Child’s Smile,” and aim to pursue higher studies abroad to sharpen my skills and bring more impact to the world.
+                        </p>
+                    </section>
+                    
+                    <div class="buttons">
+                        <a href="Assets/cv/Junayed-CV.pdf" download>Download CV</a>
+                        <a href="SRC/pages/contact.html" class="cm-button">Contact Me</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <footer class="footer">
+            <div class="left">
+                &copy; 2025 • Junayed-Bin-Karim • All Rights Reserved
+            </div>
+            <div class="right">
+                <div class="social"><a href="https://www.facebook.com/ritoncharlox" target="_blank"><i class="fa-brands fa-facebook"></i></a></div>
+                <div class="social"><a href="https://www.instagram.com/ritoncharlox" target="_blank"><i class="fa-brands fa-instagram"></i></a></div>
+                <div class="social"><a href="https://www.linkedin.com/in/ritoncharlox" target="_blank"><i class="fa-brands fa-linkedin"></i></a></div>
+                <div class="social"><a href="https://github.com/ritoncharlox" target="_blank"><i class="fa-brands fa-github"></i></a></div>
+            </div>
+        </footer>
+    </div>
+
+    <div class="nav-touch-close" id="nav-tc-js"></div>
+
+    <script type="text/javascript" src="SRC/script/script.js"></script>
+    <script src="https://unpkg.com/typed.js@2.0.16/dist/typed.umd.js"></script>
+    <script>
+        var typed = new Typed('#typed', {
+            strings: ['Graphic Designer', 'Video Editor', 'Web Developer'],
+            typeSpeed: 55,
+        });
+    </script>
+
+</body>
+
+</html>
