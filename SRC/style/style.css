@@ -1779,6 +1779,9 @@ header.scrolled {
 .hidden {
     display: none;
 }
+.close, .prev, .next {
+    display: none;
+}
 
 
 .page {
