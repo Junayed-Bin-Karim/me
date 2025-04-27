@@ -1720,6 +1720,66 @@ header.scrolled {
 		margin-top: 10px;
 	}
 }
+.recognition {
+    width: 100%;
+    padding-top: 150px;
+    min-width: 250px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.recognition-content {
+    max-width: 1200px;
+    padding: 20px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 30px;
+    justify-content: center;
+    align-items: center;
+}
+
+.recognition-box {
+    background: white;
+    border: 2px solid black;
+    border-radius: 15px;
+    padding: 10px;
+    text-align: center;
+    transition: all 0.3s ease;
+}
+
+.recognition-box img {
+    width: 250px;
+    height: 250px;
+    object-fit: cover;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.2);
+}
+
+.recognition-box:hover {
+    transform: translateY(-5px);
+}
+
+.see-more-btn {
+    margin-top: 30px;
+    padding: 10px 20px;
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: white;
+    background-color: var(--main-color);
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.see-more-btn:hover {
+    background-color: #4e54c8;
+}
+.hidden {
+    display: none;
+}
+
 
 .page {
 	height: 100vh;

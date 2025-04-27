@@ -104,7 +104,40 @@
                 </div>
             </div>
         </section>
-
+        <section class="recognition">
+            <div class="recognition-content" id="recognitionContent">
+                <div class="recognition-box">
+                    <img src="Assets/recognition/certificate_instructor_sabur-khan_page-0001.jpg" alt="Award 1" onclick="openModal(this)">
+                </div>
+                <div class="recognition-box">
+                    <img src="Assets/recognition/certificate.jpg" alt="Award 2" onclick="openModal(this)">
+                </div>
+                <div class="recognition-box">
+                    <img src="Assets/recognition/certificate (1).jpg" alt="Award 3" onclick="openModal(this)">
+                </div>
+        
+                <!-- Hidden initially -->
+                <div class="recognition-box hidden">
+                    <img src="Assets/recognition/certificate 2.jpg" alt="Award 4" onclick="openModal(this)">
+                </div>
+                <div class="recognition-box hidden">
+                    <img src="Assets/recognition/goedu-certificate-instructor-foyjunnasa_page-0001.jpg" alt="Award 5" onclick="openModal(this)">
+                </div>
+            </div>
+        
+            <button class="see-more-btn" id="seeMoreBtn">See More</button>
+        </section>
+        
+        <!-- Modal Fullscreen View -->
+        <div id="imageModal" class="modal">
+            <span class="close" onclick="closeModal()">&times;</span>
+            <div class="modal-content">
+                <span class="prev" onclick="changeImage(-1)">&#10094;</span>
+                <img class="modal-image" id="fullImage" />
+                <span class="next" onclick="changeImage(1)">&#10095;</span>
+            </div>
+        </div>
+        
         <footer class="footer">
             <div class="left">
                 &copy; 2025 • Junayed_Bin_Karim • All Rights Reserved

@@ -127,6 +127,15 @@ function isValidEmail(email) {
 if (contactForm) {
 	contactForm.addEventListener('submit', validateForm);
 }
+const seeMoreBtn = document.getElementById('seeMoreBtn');
+const hiddenBoxes = document.querySelectorAll('.recognition-box.hidden');
+
+seeMoreBtn.addEventListener('click', () => {
+    hiddenBoxes.forEach(box => {
+        box.classList.remove('hidden');
+    });
+    seeMoreBtn.style.display = 'none'; // Hide button after clicking
+});
 
 
 // After adding the Email Js APi key in the script tag of the contact.html, uncomment this function section
