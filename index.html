@@ -132,15 +132,16 @@
             <button class="see-more-btn" id="seeMoreBtn">See More</button>
         </section>
         
-        <!-- Modal Fullscreen View -->
-        <div id="imageModal" class="modal">
-            <span class="close" onclick="closeModal()">&times;</span>
-            <div class="modal-content">
-                <span class="prev" onclick="changeImage(-1)">&#10094;</span>
-                <img class="modal-image" id="fullImage" />
-                <span class="next" onclick="changeImage(1)">&#10095;</span>
-            </div>
-        </div>
+      <!-- Modal Fullscreen View (Symbols hidden but structure safe) -->
+<div id="imageModal" class="modal">
+    <span class="close" onclick="closeModal()"></span> <!-- × er jaygay blank -->
+    <div class="modal-content">
+        <span class="prev" onclick="changeImage(-1)"></span> <!-- ❮ er jaygay blank -->
+        <img class="modal-image" id="fullImage" />
+        <span class="next" onclick="changeImage(1)"></span> <!-- ❯ er jaygay blank -->
+    </div>
+</div>
+
         
         <footer class="footer">
             <div class="left">
