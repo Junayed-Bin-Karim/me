@@ -1720,21 +1720,22 @@ header.scrolled {
 		margin-top: 10px;
 	}
 }
+  
 .recognition {
     width: 100%;
-    padding-top: 150px;
-    min-width: 250px;
+    padding-top: 100px;
     display: flex;
     flex-direction: column;
     align-items: center;
 }
 
 .recognition-content {
+    width: 90%;
     max-width: 1200px;
     padding: 20px;
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 30px;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); /* Auto fit */
+    gap: 20px;
     justify-content: center;
     align-items: center;
 }
@@ -1749,8 +1750,8 @@ header.scrolled {
 }
 
 .recognition-box img {
-    width: 250px;
-    height: 250px;
+    width: 100%; /* Instead of 250px */
+    height: auto; /* Maintain original aspect ratio */
     object-fit: cover;
     border-radius: 10px;
     box-shadow: 0 0 10px rgba(0,0,0,0.2);
@@ -1776,8 +1777,25 @@ header.scrolled {
 .see-more-btn:hover {
     background-color: #4e54c8;
 }
+
 .hidden {
     display: none;
+}
+
+/* 🟡 Media Query for Mobile */
+@media (max-width: 600px) {
+    .recognition-content {
+        grid-template-columns: 1fr; /* Only one column on mobile */
+    }
+
+    .recognition-box img {
+        width: 100%;
+        height: auto;
+    }
+
+    .page {
+        padding: 10px;
+    }
 }
 
 
