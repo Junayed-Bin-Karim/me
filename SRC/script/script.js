@@ -123,14 +123,18 @@ function isValidEmail(email) {
 	return emailRegex.test(email);
 }
 
- const seeMoreBtn = document.getElementById('seeMoreBtn');
+// Event listener for form submission
+if (contactForm) {
+	contactForm.addEventListener('submit', validateForm);
+}
+const seeMoreBtn = document.getElementById('seeMoreBtn');
 const hiddenBoxes = document.querySelectorAll('.recognition-box.hidden');
 
 seeMoreBtn.addEventListener('click', () => {
     hiddenBoxes.forEach(box => {
         box.classList.remove('hidden');
     });
-    seeMoreBtn.style.display = 'none';
+    seeMoreBtn.style.display = 'none'; // Hide button after clicking
 });
 
 
