@@ -2580,7 +2580,134 @@ header.scrolled {
 }
 
 
+/* About Me Section with Scroll Animations */
+.about-me {
+    width: 100%;
+    padding: 80px 0;
+    display: flex;
+    flex-direction: column;
+    background: transparent;
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
 
+.about-me.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.about-me .intro-text {
+    margin-bottom: 1.2rem;
+    font-size: 1.05rem;
+    color: #444;
+    opacity: 0;
+    transform: translateX(-20px);
+    transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+.about-me.visible .intro-text {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+/* Stagger text animations */
+.about-me.visible .intro-text:nth-child(1) { transition-delay: 0.2s; }
+.about-me.visible .intro-text:nth-child(2) { transition-delay: 0.3s; }
+.about-me.visible .intro-text:nth-child(3) { transition-delay: 0.4s; }
+.about-me.visible .intro-text:nth-child(4) { transition-delay: 0.5s; }
+.about-me.visible .intro-text:nth-child(5) { transition-delay: 0.6s; }
+
+.about-me strong {
+    color: var(--main-color);
+    font-weight: 600;
+}
+
+/* Link styling */
+.about-me a {
+    color: var(--main-color);
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.2s;
+    opacity: 0;
+    transform: translateY(10px);
+    transition: opacity 0.4s ease, transform 0.4s ease, color 0.2s;
+}
+
+.about-me.visible a {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.about-me.visible a:nth-of-type(1) { transition-delay: 0.7s; }
+.about-me.visible a:nth-of-type(2) { transition-delay: 0.8s; }
+
+.about-me a:hover {
+    color: var(--secondary-color);
+    text-decoration: underline;
+}
+
+/* Buttons styling */
+.about-me .buttons {
+    display: flex;
+    gap: 15px;
+    margin-top: 25px;
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+.about-me.visible .buttons {
+    opacity: 1;
+    transform: translateY(0);
+    transition-delay: 0.9s;
+}
+
+.about-me .buttons a {
+    padding: 10px 20px;
+    border-radius: 5px;
+    font-weight: 600;
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+.about-me .buttons a:first-child {
+    background: var(--main-color);
+    color: white;
+    border: 1px solid var(--main-color);
+}
+
+.about-me .buttons a:first-child:hover {
+    background: transparent;
+    color: var(--main-color);
+}
+
+.about-me .buttons a.cm-button {
+    background: transparent;
+    color: var(--text-color);
+    border: 1px solid var(--text-color);
+}
+
+.about-me .buttons a.cm-button:hover {
+    background: var(--text-color);
+    color: white;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .about-me {
+        padding: 60px 0;
+    }
+    
+    .about-me .buttons {
+        flex-direction: column;
+    }
+    
+    .about-me .buttons a {
+        width: 100%;
+        text-align: center;
+    }
+}
 
 
 

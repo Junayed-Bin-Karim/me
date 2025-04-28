@@ -204,6 +204,19 @@ const observerOptions = {
   });
 
 
+/* JavaScript to add 'visible' class when scrolled into view about me  */
+const aboutObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+        if (entry.isIntersecting) {
+            entry.target.classList.add('visible');
+        }
+    });
+}, { threshold: 0.1 });
+
+document.querySelectorAll('.about-me').forEach(section => {
+    aboutObserver.observe(section);
+});
+
 
 
 
