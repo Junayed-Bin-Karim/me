@@ -2142,6 +2142,248 @@ header.scrolled {
 /* project end */
 
  
+/* Featured Skills Section */
+.featured-skills {
+    width: 100%;
+    padding: 80px 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background: transparent;
+}
+
+.featured-skills h3 {
+    text-align: center;
+    margin-bottom: 40px;
+    font-size: 2rem;
+    font-weight: 600;
+    color: var(--text-color);
+    position: relative;
+}
+
+.featured-skills h3::after {
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 60px;
+    height: 3px;
+    background: var(--main-color);
+    border-radius: 3px;
+}
+
+.skills-grid {
+    width: 90%;
+    max-width: 800px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 20px;
+    justify-content: center;
+}
+
+.skill-item {
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(4px);
+    border-radius: 10px;
+    padding: 20px;
+    text-align: center;
+    transition: all 0.3s ease;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.skill-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    border-color: var(--main-color);
+}
+
+.skill-item i {
+    font-size: 2rem;
+    color: var(--main-color);
+    margin-bottom: 10px;
+}
+
+.skill-item span {
+    font-size: 1.1rem;
+    font-weight: 500;
+    color: var(--text-color);
+}
+
+/* Achievements Section */
+.achievements {
+    width: 100%;
+    padding: 80px 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background: transparent;
+}
+
+.achievements h3 {
+    text-align: center;
+    margin-bottom: 40px;
+    font-size: 2rem;
+    font-weight: 600;
+    color: var(--text-color);
+    position: relative;
+}
+
+.achievements h3::after {
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 60px;
+    height: 3px;
+    background: var(--main-color);
+    border-radius: 3px;
+}
+
+.achievements ul {
+    width: 90%;
+    max-width: 600px;
+    list-style: none;
+}
+
+.achievements li {
+    position: relative;
+    padding-left: 30px;
+    margin-bottom: 20px;
+    font-size: 1.1rem;
+    color: var(--text-color);
+    font-weight: 500;
+}
+
+.achievements li::before {
+    content: '▹';
+    position: absolute;
+    left: 0;
+    color: var(--main-color);
+    font-size: 1.3rem;
+}
+
+/* Blog Preview Section */
+.blog-preview {
+    width: 100%;
+    padding: 80px 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background: transparent;
+}
+
+.blog-preview h3 {
+    text-align: center;
+    margin-bottom: 40px;
+    font-size: 2rem;
+    font-weight: 600;
+    color: var(--text-color);
+    position: relative;
+}
+
+.blog-preview h3::after {
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 60px;
+    height: 3px;
+    background: var(--main-color);
+    border-radius: 3px;
+}
+
+.article-card {
+    width: 90%;
+    max-width: 600px;
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(4px);
+    border-radius: 10px;
+    padding: 25px;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    transition: all 0.3s ease;
+}
+
+.article-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+
+.article-card h4 {
+    font-size: 1.3rem;
+    color: var(--text-color);
+    margin-bottom: 10px;
+}
+
+.article-card p {
+    font-size: 1rem;
+    color: var(--text-color);
+    opacity: 0.9;
+    margin-bottom: 15px;
+}
+
+.article-card a {
+    color: var(--main-color);
+    font-weight: 600;
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+}
+
+.article-card a::after {
+    content: '→';
+    margin-left: 5px;
+    transition: transform 0.3s ease;
+}
+
+.article-card a:hover::after {
+    transform: translateX(3px);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .featured-skills, 
+    .achievements,
+    .blog-preview {
+        padding: 60px 0;
+    }
+    
+    .skills-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    
+    .featured-skills h3,
+    .achievements h3,
+    .blog-preview h3 {
+        font-size: 1.8rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .skills-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .featured-skills h3,
+    .achievements h3,
+    .blog-preview h3 {
+        font-size: 1.6rem;
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
 .footer {
 	width: 100%;
 	/* min-height: 50px; */
