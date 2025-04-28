@@ -1720,6 +1720,47 @@ header.scrolled {
 		margin-top: 10px;
 	}
 }
+
+
+
+/* Clean Professional Title Style */
+.recognition h2.section-title {
+    text-align: center;
+    margin: 0 auto 40px;
+    font-size: 2.5rem;
+    font-weight: 600;
+    color: var(--text-color);
+    position: relative;
+    padding-bottom: 15px;
+    width: fit-content;
+}
+
+/* Simple underline effect */
+.recognition h2.section-title::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80px;
+    height: 3px;
+    background: var(--main-color);
+    border-radius: 3px;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .recognition h2.section-title {
+        font-size: 2rem;
+        margin-bottom: 30px;
+        padding-bottom: 10px;
+    }
+    
+    .recognition h2.section-title::after {
+        width: 60px;
+        height: 2px;
+    }
+}
 .recognition {
     width: 100%;
     padding-top: 100px;
@@ -1806,11 +1847,68 @@ header.scrolled {
 	justify-content: space-between;
 	row-gap: 50px;
 }
+
 /*end recognition/*
 
 
 
 /* Projects Section - Updated to match your color scheme */
+/* My Projects Section Title */
+.projects-section h2.section-title {
+    text-align: center;
+    margin: 0 auto 50px;
+    font-size: 2.6rem;
+    font-weight: 650;
+    color: var(--text-color);
+    position: relative;
+    padding-bottom: 15px;
+    letter-spacing: 0.5px;
+}
+
+/* Modern underline effect */
+.projects-section h2.section-title::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100px;
+    height: 4px;
+    background: var(--main-color);
+    border-radius: 2px;
+    background: linear-gradient(90deg, var(--main-color), #4e54c8);
+}
+
+/* Hover animation */
+.projects-section h2.section-title:hover::after {
+    width: 120px;
+    transition: all 0.3s ease;
+}
+
+/* Responsive adjustments */
+@media (max-width: 992px) {
+    .projects-section h2.section-title {
+        font-size: 2.3rem;
+        margin-bottom: 40px;
+    }
+}
+
+@media (max-width: 768px) {
+    .projects-section h2.section-title {
+        font-size: 2rem;
+        margin-bottom: 30px;
+        padding-bottom: 10px;
+    }
+    
+    .projects-section h2.section-title::after {
+        width: 80px;
+        height: 3px;
+    }
+    
+    .projects-section h2.section-title:hover::after {
+        width: 90px;
+    }
+}
 .projects-section {
     width: 100%;
     padding: 100px 0;
