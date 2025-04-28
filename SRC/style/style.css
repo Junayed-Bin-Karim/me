@@ -2139,7 +2139,141 @@ header.scrolled {
     from { opacity: 0; transform: translateY(20px); }
     to { opacity: 1; transform: translateY(0); }
 }
+
+
+
+
+
+
+
+
+/* Projects Section with Scroll Animations */
+.projects-section {
+    width: 100%;
+    padding: 100px 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background: transparent;
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+
+.projects-section.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.projects-container {
+    width: 90%;
+    max-width: 1200px;
+    padding: 20px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+    justify-content: center;
+    align-items: stretch;
+}
+
+.project-card {
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(4px);
+    border-radius: 15px;
+    overflow: hidden;
+    transition: all 0.5s ease;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    opacity: 0;
+    transform: translateY(30px);
+}
+
+/* Staggered animations for project cards */
+.projects-section.visible .project-card {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.projects-section.visible .project-card:nth-child(1) {
+    transition: opacity 0.6s ease 0.2s, transform 0.6s ease 0.2s, 
+                box-shadow 0.3s ease, border-color 0.3s ease;
+}
+.projects-section.visible .project-card:nth-child(2) {
+    transition: opacity 0.6s ease 0.4s, transform 0.6s ease 0.4s, 
+                box-shadow 0.3s ease, border-color 0.3s ease;
+}
+.projects-section.visible .project-card:nth-child(3) {
+    transition: opacity 0.6s ease 0.6s, transform 0.6s ease 0.6s, 
+                box-shadow 0.3s ease, border-color 0.3s ease;
+}
+.projects-section.visible .project-card:nth-child(4) {
+    transition: opacity 0.6s ease 0.8s, transform 0.6s ease 0.8s, 
+                box-shadow 0.3s ease, border-color 0.3s ease;
+}
+
+.project-card:hover {
+    transform: translateY(-5px) !important;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+    border-color: var(--main-color);
+}
+
+.project-image {
+    height: 200px;
+    overflow: hidden;
+}
+
+.project-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+}
+
+.project-card:hover .project-image img {
+    transform: scale(1.1);
+}
+
+/* View All Button Animation */
+.view-all-projects {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.6s ease 1s, transform 0.6s ease 1s;
+}
+
+.projects-section.visible .view-all-projects {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Hidden Projects Animation */
+.hidden-project {
+    display: none;
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.5s ease, transform 0.5s ease;
+}
+
+.projects-shown .hidden-project {
+    display: block;
+    animation: fadeInUp 0.6s ease forwards;
+}
+
+/* Stagger hidden projects animations */
+.projects-shown .hidden-project:nth-child(4) { animation-delay: 0.1s; }
+.projects-shown .hidden-project:nth-child(5) { animation-delay: 0.2s; }
+.projects-shown .hidden-project:nth-child(6) { animation-delay: 0.3s; }
+
+@keyframes fadeInUp {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+
 /* project end */
+
+
+
+
 
  
 /* Featured Skills Section */
@@ -2373,7 +2507,77 @@ header.scrolled {
     }
 }
 
+/* Scroll Animation Styles */
+.featured-skills,
+.achievements,
+.blog-preview,
+.about-me,
+.projects-section {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
 
+.featured-skills.visible,
+.achievements.visible,
+.blog-preview.visible,
+.about-me.visible,
+.projects-section.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Staggered animations for skills grid */
+.skills-grid .skill-item {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.4s ease-out, transform 0.4s ease-out, 
+              box-shadow 0.3s ease, border-color 0.3s ease;
+}
+
+.skills-grid.visible .skill-item {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Delay each skill item animation */
+.skills-grid.visible .skill-item:nth-child(1) { transition-delay: 0.1s; }
+.skills-grid.visible .skill-item:nth-child(2) { transition-delay: 0.2s; }
+.skills-grid.visible .skill-item:nth-child(3) { transition-delay: 0.3s; }
+.skills-grid.visible .skill-item:nth-child(4) { transition-delay: 0.4s; }
+.skills-grid.visible .skill-item:nth-child(5) { transition-delay: 0.5s; }
+.skills-grid.visible .skill-item:nth-child(6) { transition-delay: 0.6s; }
+
+/* List item animations */
+.achievements ul li {
+  opacity: 0;
+  transform: translateX(-20px);
+  transition: opacity 0.4s ease-out, transform 0.4s ease-out;
+}
+
+.achievements.visible ul li {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+/* Stagger list items */
+.achievements.visible ul li:nth-child(1) { transition-delay: 0.1s; }
+.achievements.visible ul li:nth-child(2) { transition-delay: 0.2s; }
+.achievements.visible ul li:nth-child(3) { transition-delay: 0.3s; }
+.achievements.visible ul li:nth-child(4) { transition-delay: 0.4s; }
+
+/* Article card animation */
+.article-card {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.5s ease-out, transform 0.5s ease-out, 
+              box-shadow 0.3s ease;
+}
+
+.blog-preview.visible .article-card {
+  opacity: 1;
+  transform: translateY(0);
+}
 
 
 

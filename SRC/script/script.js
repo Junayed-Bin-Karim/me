@@ -146,6 +146,70 @@ document.addEventListener('DOMContentLoaded', function() {
         projectsContainer.classList.add('projects-shown');
     });
 });
+/* JavaScript to add 'visible' class when scrolled into view */
+const projectObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+        if (entry.isIntersecting) {
+            entry.target.classList.add('visible');
+        }
+    });
+}, { threshold: 0.1 });
+
+document.querySelectorAll('.projects-section').forEach(section => {
+    projectObserver.observe(section);
+});
+
+/* Toggle hidden projects */
+document.getElementById('viewAllBtn').addEventListener('click', function() {
+    document.querySelector('.projects-section').classList.add('projects-shown');
+    this.style.display = 'none';
+});
+
+
+// Intersection Observer for scroll animations
+const observerOptions = {
+	threshold: 0.1,
+	rootMargin: "0px 0px -50px 0px"
+  };
+  
+  const observer = new IntersectionObserver((entries) => {
+	entries.forEach(entry => {
+	  if (entry.isIntersecting) {
+		entry.target.classList.add('visible');
+		
+		// For skills grid, we need to add visible class to the grid itself
+		if (entry.target.classList.contains('skills-grid')) {
+		  entry.target.classList.add('visible');
+		}
+	  }
+	});
+  }, observerOptions);
+  
+  // Observe all sections
+  document.querySelectorAll('.featured-skills, .achievements, .blog-preview, .about-me, .projects-section, .skills-grid').forEach(section => {
+	observer.observe(section);
+  });
+  
+  // For achievements list items - observe the parent container
+  const listObserver = new IntersectionObserver((entries) => {
+	entries.forEach(entry => {
+	  if (entry.isIntersecting) {
+		entry.target.classList.add('visible');
+	  }
+	});
+  }, observerOptions);
+  
+  document.querySelectorAll('.achievements ul').forEach(list => {
+	listObserver.observe(list);
+  });
+
+
+
+
+
+
+
+
 
 // After adding the Email Js APi key in the script tag of the contact.html, uncomment this function section
 
