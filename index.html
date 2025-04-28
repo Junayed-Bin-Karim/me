@@ -104,12 +104,12 @@
                 </div>
             </div>
         </section>
-<!-- New Projects Section -->
+      <!-- Updated Projects Section -->
 <section class="projects-section">
     <h2 class="section-title">My Projects</h2>
     <div class="projects-container">
-        <!-- Project 1 -->
-        <div class="project-card">
+        <!-- Project 1 (Visible by default) -->
+        <div class="project-card default-visible">
             <div class="project-image">
                 <img src="Assets/projects/e-commerce shop.png" alt="E-commerce Shop">
             </div>
@@ -123,13 +123,13 @@
                 </div>
                 <div class="project-links">
                     <a href="https://junayed-ecommerce-shop.netlify.app/" target="_blank" class="live-demo">Live Demo</a>
-                    <a href="https://github.com/Junayed-Bin-Karim/eCommerce-website-project" class="view-code">View Code</a>
+                    <a href="https://github.com/Junayed-Bin-Karim/eCommerce-website-project" target="_blank" class="view-code">View Code</a>
                 </div>
             </div>
         </div>
 
-        <!-- Project 2 -->
-        <div class="project-card">
+        <!-- Project 2 (Visible by default) -->
+        <div class="project-card default-visible">
             <div class="project-image">
                 <img src="Assets/projects/e-commerce web.png" alt="E-commerce Website">
             </div>
@@ -143,13 +143,35 @@
                 </div>
                 <div class="project-links">
                     <a href="https://junayed-ecommerce-website.netlify.app/" target="_blank" class="live-demo">Live Demo</a>
-                    <a href="https://github.com/Junayed-Bin-Karim/eCommerce-website" class="view-code">View Code</a>
+                    <a href="https://github.com/Junayed-Bin-Karim/eCommerce-website" target="_blank" class="view-code">View Code</a>
                 </div>
             </div>
         </div>
 
-        <!-- Project 3 -->
-        <div class="project-card">
+        <!-- Project 3 (Visible by default) -->
+        <div class="project-card default-visible">
+            <div class="project-image">
+                <img src="Assets/projects/IoT project.png" alt="IoT Smart Garden System">
+            </div>
+            <div class="project-details">
+                <h3>Smart Garden Irrigation System</h3>
+                <p>IoT-based system that automatically waters plants based on real-time soil moisture data with Blynk app monitoring.</p>
+                <div class="project-tech">
+                    <span>IoT</span>
+                    <span>ESP8266</span>
+                    <span>C++</span>
+                    <span>Blynk</span>
+                </div>
+                <div class="project-links">
+                    <a href="https://youtu.be/FceyhRI7mdI?si=VV6Fu4c58KPmX4Rh" target="_blank" class="live-demo">Demo Video</a>
+                    <a href="https://github.com/Junayed-Bin-Karim/IoT-Based-Smart-Garden-Irrigation-System-with-Real-Time-Monitoring-Using-Blynk-App" target="_blank" class="view-code">GitHub Code</a>
+                </div>
+            </div>
+        </div>
+       
+
+        <!-- Project 4 (Hidden initially) -->
+        <div class="project-card hidden-project">
             <div class="project-image">
                 <img src="Assets/projects/ml-dashboard.jpg" alt="ML Dashboard">
             </div>
@@ -170,7 +192,7 @@
     </div>
     
     <div class="view-all-projects">
-        <a href="#" class="view-all-btn">View All Projects</a>
+        <button class="view-all-btn" id="viewAllBtn">See All Projects</button>
     </div>
 </section>
         <section class="recognition">

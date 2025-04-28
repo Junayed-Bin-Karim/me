@@ -137,6 +137,15 @@ seeMoreBtn.addEventListener('click', () => {
     seeMoreBtn.style.display = 'none'; // Hide button after clicking
 });
 
+// project 
+document.addEventListener('DOMContentLoaded', function() {
+    const viewAllBtn = document.getElementById('viewAllBtn');
+    const projectsContainer = document.querySelector('.projects-container');
+    
+    viewAllBtn.addEventListener('click', function() {
+        projectsContainer.classList.add('projects-shown');
+    });
+});
 
 // After adding the Email Js APi key in the script tag of the contact.html, uncomment this function section
 

@@ -1759,7 +1759,54 @@ header.scrolled {
 .recognition-box:hover {
     transform: translateY(-5px);
 }
+.see-more-btn {
+    margin-top: 30px;
+    padding: 10px 20px;
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: white;
+    background-color: var(--main-color);
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
 
+.see-more-btn:hover {
+    background-color: #4e54c8;
+}
+
+.hidden {
+    display: none;
+}
+
+/* 🟡 Media Query for Mobile */
+@media (max-width: 600px) {
+    .recognition-content {
+        grid-template-columns: 1fr; /* Only one column on mobile */
+    }
+
+    .recognition-box img {
+        width: 100%;
+        height: auto;
+    }
+
+    .page {
+        padding: 10px;
+    }
+}
+
+
+
+.page {
+	height: 100vh;
+	/* min-height: 100%; */
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	row-gap: 50px;
+}
+/*end recognition/*
 
 
 
@@ -1954,55 +2001,49 @@ header.scrolled {
         font-size: 1rem;
     }
 }
-
-.see-more-btn {
-    margin-top: 30px;
-    padding: 10px 20px;
-    font-size: 1.2rem;
-    font-weight: 600;
-    color: white;
-    background-color: var(--main-color);
-    border: none;
-    border-radius: 8px;
-    cursor: pointer;
-    transition: all 0.3s ease;
-}
-
-.see-more-btn:hover {
-    background-color: #4e54c8;
-}
-
-.hidden {
+/* Projects Visibility Toggle */
+.hidden-project {
     display: none;
 }
 
-/* 🟡 Media Query for Mobile */
-@media (max-width: 600px) {
-    .recognition-content {
-        grid-template-columns: 1fr; /* Only one column on mobile */
-    }
-
-    .recognition-box img {
-        width: 100%;
-        height: auto;
-    }
-
-    .page {
-        padding: 10px;
-    }
+.view-all-btn {
+    display: inline-block;
+    padding: 12px 30px;
+    background: var(--main-color);
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    border: 1px solid var(--main-color);
+    cursor: pointer;
+    border: none;
+    outline: none;
 }
 
-
-
-.page {
-	height: 100vh;
-	/* min-height: 100%; */
-	display: flex;
-	flex-direction: column;
-	justify-content: space-between;
-	row-gap: 50px;
+.view-all-btn:hover {
+    background: transparent;
+    color: var(--main-color);
+    transform: translateY(-3px);
 }
 
+/* When projects are shown */
+.projects-shown .hidden-project {
+    display: block;
+    animation: fadeIn 0.5s ease;
+}
+
+.projects-shown #viewAllBtn {
+    display: none;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+/* project end */
+
+ 
 .footer {
 	width: 100%;
 	/* min-height: 50px; */
