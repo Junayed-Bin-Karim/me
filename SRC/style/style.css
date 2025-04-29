@@ -2726,44 +2726,8 @@ header.scrolled {
     }
 }
 
-
-
-@media (max-width: 768px) {
-    .contact-section .cs-item {
-        display: flex;
-        align-items: center;
-        margin-bottom: 15px;
-        padding: 10px;
-        border: 1px solid #ddd;
-        border-radius: 8px;
-        background-color: #f9f9f9;
-    }
-
-    .contact-section .cs-item .icon {
-        font-size: 20px;
-        margin-right: 10px;
-        color: #25a86b;
-    }
-
-    .contact-section .cs-item .text {
-        flex: 1;
-    }
-
-    .contact-section .cs-item .placeHolder {
-        font-size: 14px;
-        color: #888;
-    }
-
-    .contact-section .cs-item .info {
-        font-size: 16px;
-        font-weight: bold;
-        word-break: break-word;
-        color: #333;
-    }
-}
-
-
-
+ 
+ 
 
 .footer {
 	width: 100%;
