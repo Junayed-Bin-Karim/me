@@ -2728,127 +2728,212 @@ header.scrolled {
 
 
 
-/* Stats Page Specific Styles */
+/* Reuse Root Colors & Font */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
+:root {
+	--bg-color: radial-gradient(circle at 70% 50%, rgba(238, 174, 202, 1) 0%, rgb(145, 167, 192) 100%);
+	--text-color: #363636;
+	--main-color: brown;
+}
+
+body {
+	background: var(--bg-color);
+	color: var(--text-color);
+	font-family: 'Poppins', sans-serif;
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+/*  My Milestones
+Numbers that tell my success story............STATS HERO */
+
+
+
 .stats-hero {
-    padding: 120px 20px 60px;
-    text-align: center;
-    background: rgba(255, 255, 255, 0.1);
-    backdrop-filter: blur(5px);
-    margin-top: 80px;
+	padding: 120px 20px 60px;
+	text-align: center;
+	background: rgba(255, 255, 255, 0.1);
+	backdrop-filter: blur(5px);
+	margin-top: 80px;
+	border-radius: 10px;
+	box-shadow: 0 0 10px rgba(0,0,0,0.1);
+	animation: fadeIn 1.2s ease;
 }
 
 .stats-hero h1 {
-    font-size: 2.5rem;
-    color: var(--text-color);
-    margin-bottom: 15px;
+	font-size: 2.5rem;
+	color: var(--text-color);
+	margin-bottom: 15px;
 }
 
 .stats-hero p {
-    font-size: 1.2rem;
-    color: var(--text-color);
-    opacity: 0.9;
+	font-size: 1.2rem;
+	color: var(--text-color);
+	opacity: 0.9;
 }
 
+/* STATS CONTAINER */
 .stats-container {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 30px;
-    max-width: 1200px;
-    margin: 50px auto;
-    padding: 0 20px;
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+	gap: 30px;
+	max-width: 1200px;
+	margin: 50px auto;
+	padding: 0 20px;
 }
 
+/* STAT CARD */
 .stat-card {
-    background: white;
-    border-radius: 15px;
-    padding: 40px 30px;
-    width: 280px;
-    text-align: center;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
-    transition: all 0.4s ease;
-    position: relative;
-    overflow: hidden;
+	background: rgba(255, 255, 255, 0.25);
+	backdrop-filter: blur(10px);
+	border-radius: 20px;
+	padding: 40px 30px;
+	width: 280px;
+	text-align: center;
+	box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+	transition: all 0.4s ease;
+	position: relative;
+	overflow: hidden;
+	opacity: 0;
+	transform: translateY(20px);
+	animation: reveal 0.6s forwards;
 }
 
+/* Delay for animation */
+.stat-card:nth-child(2) { animation-delay: 0.2s; }
+.stat-card:nth-child(3) { animation-delay: 0.4s; }
+.stat-card:nth-child(4) { animation-delay: 0.6s; }
+
+/* Hover effects */
 .stat-card:hover {
-    transform: translateY(-10px) scale(1.03);
-    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15);
+	transform: translateY(-10px) scale(1.03);
+	box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15);
 }
 
+/* ICON */
 .stat-icon {
-    font-size: 3rem;
-    margin-bottom: 20px;
-    color: var(--main-color);
-    transition: all 0.3s ease;
+	font-size: 3rem;
+	margin-bottom: 20px;
+	color: var(--main-color);
+	transition: all 0.3s ease;
 }
 
 .stat-card:hover .stat-icon {
-    transform: scale(1.1);
-    color: #4e54c8;
+	transform: scale(1.1);
+	color: #4e54c8;
 }
 
+/* NUMBERS */
 .stat-number {
-    font-size: 3.5rem;
-    font-weight: 700;
-    margin-bottom: 10px;
-    color: var(--text-color);
-    transition: all 0.3s ease;
+	font-size: 3.5rem;
+	font-weight: 700;
+	margin-bottom: 10px;
+	color: var(--text-color);
+	transition: all 0.3s ease;
 }
 
 .stat-card:hover .stat-number {
-    color: var(--main-color);
+	color: var(--main-color);
 }
 
+/* TITLE */
 .stat-title {
-    font-size: 1.3rem;
-    color: #666;
-    font-weight: 500;
-    margin-bottom: 15px;
-    transition: all 0.3s ease;
+	font-size: 1.3rem;
+	color: #666;
+	font-weight: 500;
+	margin-bottom: 15px;
+	transition: all 0.3s ease;
 }
 
 .stat-card:hover .stat-title {
-    color: var(--text-color);
-    transform: scale(1.05);
+	color: var(--text-color);
+	transform: scale(1.05);
 }
 
+/* Progress bar */
 .stat-bar {
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    width: 0;
-    height: 5px;
-    background: var(--main-color);
-    transition: width 2s ease-in-out;
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	width: 0;
+	height: 5px;
+	background: var(--main-color);
+	transition: width 2s ease-in-out;
 }
 
 .stat-card:hover .stat-bar {
-    width: 100%;
+	width: 100%;
 }
 
-/* Animation for sequential counting */
+/* Sequential Pulse Animation */
 @keyframes pulse {
-    0% { transform: scale(1); }
-    50% { transform: scale(1.05); }
-    100% { transform: scale(1); }
+	0% { transform: scale(1); }
+	50% { transform: scale(1.05); }
+	100% { transform: scale(1); }
 }
 
 .counting {
-    animation: pulse 0.5s ease;
+	animation: pulse 0.5s ease;
 }
 
-@media (max-width: 768px) {
-    .stats-hero {
-        padding: 100px 20px 40px;
-    }
-    
-    .stat-card {
-        width: 100%;
-        max-width: 350px;
-        padding: 30px 20px;
-    }
+/* Scroll Animation */
+@keyframes reveal {
+	from {
+		opacity: 0;
+		transform: translateY(20px);
+	}
+	to {
+		opacity: 1;
+		transform: translateY(0);
+	}
 }
+
+@keyframes fadeIn {
+	from { opacity: 0; }
+	to { opacity: 1; }
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+	.stats-hero {
+		padding: 100px 20px 40px;
+	}
+	.stat-card {
+		width: 100%;
+		max-width: 350px;
+		padding: 30px 20px;
+	}
+}
+.milestone-section {
+    text-align: center;
+    padding: 50px 20px;
+}
+
+.milestone-title {
+    font-size: 2.5rem;
+    color: var(--text-color);
+    display: inline-block;
+    position: relative;
+    padding-bottom: 10px;
+}
+
+.milestone-title::after {
+    content: "";
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    bottom: 0;
+    width: 80px;
+    height: 3px;
+    background-color: var(--main-color);
+    border-radius: 5px;
+}
+
+ /*My Milestones
+Numbers that tell my success story end >>>>>>>>>>*/
 
 
 

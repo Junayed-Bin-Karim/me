@@ -218,6 +218,7 @@ document.querySelectorAll('.about-me').forEach(section => {
 });
 
 
+//Numbers that tell my success story  start .........
 
 
 
@@ -358,6 +359,12 @@ function animateCounters() {
         delay += 500;
     });
 }
+
+//My Milestones Numbers that tell my success story  End ...........
+
+
+
+ 
 
 // After adding the Email Js APi key in the script tag of the contact.html, uncomment this function section
 
