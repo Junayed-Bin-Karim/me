@@ -1800,7 +1800,6 @@ header.scrolled {
 .recognition-box:hover {
     transform: translateY(-5px);
 }
-
 .see-more-btn {
     margin-top: 30px;
     padding: 10px 20px;
@@ -2727,8 +2726,131 @@ header.scrolled {
     }
 }
 
- 
- 
+
+
+/* Stats Page Specific Styles */
+.stats-hero {
+    padding: 120px 20px 60px;
+    text-align: center;
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(5px);
+    margin-top: 80px;
+}
+
+.stats-hero h1 {
+    font-size: 2.5rem;
+    color: var(--text-color);
+    margin-bottom: 15px;
+}
+
+.stats-hero p {
+    font-size: 1.2rem;
+    color: var(--text-color);
+    opacity: 0.9;
+}
+
+.stats-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 30px;
+    max-width: 1200px;
+    margin: 50px auto;
+    padding: 0 20px;
+}
+
+.stat-card {
+    background: white;
+    border-radius: 15px;
+    padding: 40px 30px;
+    width: 280px;
+    text-align: center;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    transition: all 0.4s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.stat-card:hover {
+    transform: translateY(-10px) scale(1.03);
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15);
+}
+
+.stat-icon {
+    font-size: 3rem;
+    margin-bottom: 20px;
+    color: var(--main-color);
+    transition: all 0.3s ease;
+}
+
+.stat-card:hover .stat-icon {
+    transform: scale(1.1);
+    color: #4e54c8;
+}
+
+.stat-number {
+    font-size: 3.5rem;
+    font-weight: 700;
+    margin-bottom: 10px;
+    color: var(--text-color);
+    transition: all 0.3s ease;
+}
+
+.stat-card:hover .stat-number {
+    color: var(--main-color);
+}
+
+.stat-title {
+    font-size: 1.3rem;
+    color: #666;
+    font-weight: 500;
+    margin-bottom: 15px;
+    transition: all 0.3s ease;
+}
+
+.stat-card:hover .stat-title {
+    color: var(--text-color);
+    transform: scale(1.05);
+}
+
+.stat-bar {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 5px;
+    background: var(--main-color);
+    transition: width 2s ease-in-out;
+}
+
+.stat-card:hover .stat-bar {
+    width: 100%;
+}
+
+/* Animation for sequential counting */
+@keyframes pulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.05); }
+    100% { transform: scale(1); }
+}
+
+.counting {
+    animation: pulse 0.5s ease;
+}
+
+@media (max-width: 768px) {
+    .stats-hero {
+        padding: 100px 20px 40px;
+    }
+    
+    .stat-card {
+        width: 100%;
+        max-width: 350px;
+        padding: 30px 20px;
+    }
+}
+
+
 
 .footer {
 	width: 100%;

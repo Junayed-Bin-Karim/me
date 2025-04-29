@@ -221,8 +221,143 @@ document.querySelectorAll('.about-me').forEach(section => {
 
 
 
+// Counter Animation Function
+function animateCounters() {
+    const statCards = document.querySelectorAll('.stat-card');
+    let delay = 300; // Initial delay before first counter starts
+    
+    statCards.forEach((card, index) => {
+        setTimeout(() => {
+            // Add active class for animation
+            card.classList.add('counting');
+            
+            const statNumber = card.querySelector('.stat-number');
+            const target = +statNumber.getAttribute('data-target');
+            const speed = +statNumber.getAttribute('data-speed') || 50;
+            let count = 0;
+            
+            const updateCounter = () => {
+                const increment = target / speed;
+                count += increment;
+                
+                if (count < target) {
+                    statNumber.textContent = Math.floor(count).toLocaleString();
+                    setTimeout(updateCounter, 20);
+                } else {
+                    statNumber.textContent = target.toLocaleString();
+                    card.classList.remove('counting');
+                }
+            };
+            
+            updateCounter();
+            
+            // Animate the progress bar
+            const statBar = card.querySelector('.stat-bar');
+            statBar.style.width = '100%';
+            
+        }, delay);
+        
+        delay += 500; // Increment delay for next card
+    });
+}
 
+// Initialize when page loads
+document.addEventListener('DOMContentLoaded', function() {
+    // Header scroll effect (same as home page)
+    const header = document.getElementById('header');
+    window.addEventListener('scroll', function() {
+        if (window.scrollY > 50) {
+            header.classList.add('scrolled');
+        } else {
+            header.classList.remove('scrolled');
+        }
+    });
 
+    // Mobile menu toggle (same as home page)
+    const menuIcon = document.getElementById('menu-icon');
+    const navbar = document.querySelector('.navbar');
+    const navTouchClose = document.getElementById('nav-touch-close');
+
+    menuIcon.addEventListener('click', function() {
+        navbar.classList.toggle('open');
+        navTouchClose.classList.toggle('nav-touch-close-open');
+    });
+
+    navTouchClose.addEventListener('click', function() {
+        navbar.classList.remove('open');
+        this.classList.remove('nav-touch-close-open');
+    });
+
+    // Start counter animation when stats section is in view
+    const statsSection = document.querySelector('.stats-container');
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                animateCounters();
+                observer.unobserve(entry.target);
+            }
+        });
+    }, { threshold: 0.5 });
+
+    if (statsSection) {
+        observer.observe(statsSection);
+    }
+});
+// Enhanced counter animation with country focus
+function animateCounters() {
+    const statCards = document.querySelectorAll('.stat-card');
+    let delay = 300;
+    
+    statCards.forEach((card, index) => {
+        setTimeout(() => {
+            card.classList.add('counting');
+            
+            const statNumber = card.querySelector('.stat-number');
+            const target = +statNumber.getAttribute('data-target');
+            const speed = +statNumber.getAttribute('data-speed') || 50;
+            let count = 0;
+            
+            // Special effect for countries served
+            const isCountriesCard = card.querySelector('.fa-globe-americas') !== null;
+            if (isCountriesCard) {
+                card.style.transform = 'scale(1.05)';
+                card.querySelector('.stat-icon').style.color = '#4e54c8';
+            }
+            
+            const updateCounter = () => {
+                const increment = target / speed;
+                count += increment;
+                
+                if (count < target) {
+                    statNumber.textContent = Math.floor(count).toLocaleString();
+                    setTimeout(updateCounter, 20);
+                } else {
+                    statNumber.textContent = target.toLocaleString();
+                    card.classList.remove('counting');
+                    
+                    // Special completion effect for countries
+                    if (isCountriesCard) {
+                        const flags = card.querySelectorAll('.country-flags img');
+                        flags.forEach((flag, i) => {
+                            setTimeout(() => {
+                                flag.style.transform = 'scale(1.3)';
+                                setTimeout(() => {
+                                    flag.style.transform = 'scale(1)';
+                                }, 300);
+                            }, i * 100);
+                        });
+                    }
+                }
+            };
+            
+            updateCounter();
+            card.querySelector('.stat-bar').style.width = '100%';
+            
+        }, delay);
+        
+        delay += 500;
+    });
+}
 
 // After adding the Email Js APi key in the script tag of the contact.html, uncomment this function section
 
