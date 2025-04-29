@@ -2935,7 +2935,19 @@ Numbers that tell my success story............STATS HERO */
  /*My Milestones
 Numbers that tell my success story end >>>>>>>>>>*/
 
+/* Add this to your CSS */
+.navbar {
+    transition: all 0.3s ease;
+}
 
+.navbar.open {
+    display: flex !important; /* Or whatever display you want */
+    /* Other styles for open state */
+}
+
+.bx-x {
+    /* Styles for the X icon */
+}
 
 .footer {
 	width: 100%;

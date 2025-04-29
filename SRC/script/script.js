@@ -1,22 +1,31 @@
+// Update your menu toggle code to this:
 let menu = document.querySelector('#menu-icon-js');
 let menuicon = document.querySelector('#menu-icon');
 let navbar = document.querySelector('.navbar');
 let navtc = document.querySelector('#nav-tc-js');
 
-menu.onclick = () => {
-	menuicon.classList.toggle('bx-x');
-	navbar.classList.toggle('open');
-	navtc.classList.toggle("nav-touch-close-open");
+// Use both click and touch events for better mobile support
+menu.addEventListener('click', toggleMenu);
+menu.addEventListener('touchstart', toggleMenu);
+
+navtc.addEventListener('click', closeMenu);
+navtc.addEventListener('touchstart', closeMenu);
+
+function toggleMenu(e) {
+    e.preventDefault(); // Prevent default behavior
+    menuicon.classList.toggle('bx-x');
+    navbar.classList.toggle('open');
+    navtc.classList.toggle("nav-touch-close-open");
 }
 
-navtc.onclick = () => {
-	menuicon.classList.toggle('bx-x');
-	navbar.classList.remove('open');
-	navtc.classList.remove('nav-touch-close-open');
-	navtc.classList.remove("nav-tc-z");
-	navtc.classList.remove("nav-LR-TC");
-}
-
+function closeMenu(e) {
+    e.preventDefault();
+    menuicon.classList.remove('bx-x');
+    navbar.classList.remove('open');
+    navtc.classList.remove("nav-touch-close-open");
+    navtc.classList.remove("nav-tc-z");
+    navtc.classList.remove("nav-LR-TC");
+} 
 /* When the user scrolls down, hide the navbar. When the user scrolls up, show the navbar */
 var prevScrollpos = window.pageYOffset;
 window.onscroll = function () {
