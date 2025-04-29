@@ -2429,6 +2429,18 @@ header.scrolled {
     border-radius: 3px;
 }
 
+
+.blog-preview {
+    padding: 20px;
+}
+
+.article-card {
+    margin-bottom: 20px; /* Creates gap between cards */
+    padding: 15px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+}
+
 .article-card {
     width: 90%;
     max-width: 600px;
