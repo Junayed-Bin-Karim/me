@@ -2975,17 +2975,18 @@ Numbers that tell my success story end >>>>>>>>>>*/
     height: 2px;
     background: linear-gradient(90deg, var(--main-color), transparent);
 }
-
 /* ===== Professional Summary ===== */
 #professional-summary {
     padding: 30px;
-    margin-bottom: 50px;
+    margin: 0 auto 50px auto; /* center with auto and control bottom margin */
     border-radius: 10px;
     background: rgba(255, 255, 255, 0.1);
     backdrop-filter: blur(10px);
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
     border: 1px solid rgba(255, 255, 255, 0.2);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
+    max-width: 100%;
+    box-sizing: border-box;
 }
 
 #professional-summary:hover {
@@ -3001,6 +3002,15 @@ Numbers that tell my success story end >>>>>>>>>>*/
     word-spacing: normal;
 }
 
+/* === Responsive: Optimize spacing for small screens === */
+@media (max-width: 600px) {
+    #professional-summary {
+        padding: 16px;
+        margin: 0 10px 30px 10px;
+    }
+}
+
+ 
 /* ===== Career Goals ===== */
 .career-goals {
     margin-top: 50px;
@@ -3123,15 +3133,8 @@ Numbers that tell my success story end >>>>>>>>>>*/
     opacity: 1;
     transform: translate(0) !important;
 }
-  
-.professional-text {
-	max-width: 100%;
-	padding: 0 10px;
-	margin: 0 auto;
-	font-size: 14px;
-	line-height: 1.5;
-  }
-  
+ 
+
 
 .footer {
 	width: 100%;
