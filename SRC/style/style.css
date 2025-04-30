@@ -2981,41 +2981,7 @@ Numbers that tell my success story end >>>>>>>>>>*/
 
 
 /* ===== Professional Summary ===== */
-#professional-summary {
-    max-width: 800px;
-    margin: 0 auto 50px auto;
-    padding: 30px 20px; /* horizontal padding */
-    border-radius: 10px;
-    background: rgba(255, 255, 255, 0.1);
-    backdrop-filter: blur(10px);
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-    border: 1px solid rgba(255, 255, 255, 0.2);
-     transition: transform 0.3s ease, box-shadow 0.3s ease;
-    box-sizing: border-box;
-}
-
-#professional-summary:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
-}
-
-#professional-summary p {
-    font-size: inherit;
-    text-align: justify;
-    margin: 0 0 1em 0;
-    white-space: normal;
-    word-spacing: normal;
-}
-
-/* ✅ Mobile-specific adjustments */
-@media (max-width: 600px) {
-    #professional-summary {
-        padding: 20px 16px; /* equal left-right padding */
-        margin: 0 10px 30px 10px;
-    }
-} 
  
-
 
 
 
