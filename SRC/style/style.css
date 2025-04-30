@@ -2937,35 +2937,6 @@ Numbers that tell my success story end >>>>>>>>>>*/
 
  
 
-/* ===== Professional Summary ===== */
-#professional-summary {
-    padding: 30px 20px; /* top-bottom: 30px, left-right: 20px */
-    margin-bottom: 50px;
-    border-radius: 10px;
-    background: rgba(255, 255, 255, 0.1);
-    backdrop-filter: blur(10px);
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-    border: 1px solid rgba(255, 255, 255, 0.2);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-#professional-summary:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
-}
-
-#professional-summary p {
-    font-size: 0.6rem; /* very small text size */
-    text-align: justify;
-    margin: 0 0 1em 0;
-    white-space: normal;
-    word-spacing: normal;
-}
-
-
-
-
-
 
 
 /* ===== Career Section Styles ===== */
@@ -3005,10 +2976,31 @@ Numbers that tell my success story end >>>>>>>>>>*/
     background: linear-gradient(90deg, var(--main-color), transparent);
 }
 
+/* ===== Professional Summary ===== */
+#professional-summary {
+    padding: 30px;
+    margin-bottom: 50px;
+    border-radius: 10px;
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
 
+#professional-summary:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+}
 
+#professional-summary p {
+    font-size: inherit;
+    text-align: justify;
+    margin: 0 0 1em 0;
+    white-space: normal;
+    word-spacing: normal;
+}
 
- 
 /* ===== Career Goals ===== */
 .career-goals {
     margin-top: 50px;
@@ -3131,6 +3123,88 @@ Numbers that tell my success story end >>>>>>>>>>*/
     opacity: 1;
     transform: translate(0) !important;
 }
+
+/* ===== Mobile Responsiveness ===== */
+@media (max-width: 768px) {
+    .career-main {
+        padding: 120px 15px 40px;
+    }
+    
+    .career-header {
+        flex-direction: column;
+        align-items: flex-start;
+        margin-bottom: 20px;
+    }
+    
+    .career-header .text {
+        white-space: normal;
+        margin-right: 0;
+        margin-bottom: 10px;
+    }
+     
+    #professional-summary {
+        padding: 20px;
+        margin-bottom: 30px;
+    }
+    
+    .goals {
+        gap: 20px;
+    }
+    
+    .texts {
+        padding: 15px;
+    }
+    
+    .text-row {
+        margin-bottom: 12px;
+        padding: 8px;
+    }
+    
+    .tr-icon {
+        margin-right: 12px;
+    }
+}
+
+@media (max-width: 480px) {
+    .career-main {
+        padding: 100px 12px 30px;
+    }
+    
+    .goals-row {
+        min-width: 100%;
+    }
+     
+    .text-row {
+        font-size: 0.95rem;
+        line-height: 1.5;
+    }
+    
+    .tr-icon {
+        margin-right: 10px;
+        margin-top: 6px;
+    }
+}
+
+/* ===== Typography Enhancements ===== */
+body {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-rendering: optimizeLegibility;
+}
+ 
+body, .text-row, #professional-summary p {
+    font-family: 'Poppins', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', sans-serif;
+}
+
+
+
+ 
+
+
+ 
+ 
+
+
  
 
 
