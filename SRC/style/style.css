@@ -2932,9 +2932,7 @@ Numbers that tell my success story............STATS HERO */
     border-radius: 5px;
 }
 
- /*My Milestones
-Numbers that tell my success story end >>>>>>>>>>*/
-
+ 
 /* Add this to your CSS */
 .navbar {
     transition: all 0.3s ease;
@@ -2964,6 +2962,296 @@ Numbers that tell my success story end >>>>>>>>>>*/
 	background: rgba(255, 255, 255, 0.1);
 	backdrop-filter: blur(4px);
 }
+/*My Milestones
+Numbers that tell my success story end >>>>>>>>>>*/
+
+
+/*CARRER*/
+
+
+/* Career Page Specific Styles */
+.career-main {
+    width: 100%;
+    padding: 150px 20px 50px;
+    display: flex;
+    justify-content: center;
+    font-size: clamp(1rem, 2vw, 1.1rem); /* Responsive base font size */
+}
+
+.career-section {
+    max-width: 1000px;
+    width: 100%;
+}
+
+.career-header {
+    display: flex;
+    align-items: center;
+    margin-bottom: 30px;
+}
+
+.career-header .text {
+    font-size: clamp(1.5rem, 4vw, 1.8rem); /* Responsive header size */
+    font-weight: 700;
+    color: var(--main-color);
+    white-space: nowrap;
+    margin-right: 20px;
+    letter-spacing: -0.5px;
+}
+
+.career-header .header-line {
+    width: 100%;
+    height: 2px;
+    background: linear-gradient(90deg, var(--main-color), transparent);
+}
+
+/* Professional Summary */
+#professional-summary {
+    padding: 30px;
+    margin-bottom: 50px;
+    border-radius: 10px;
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    line-height: 1.7;
+}
+
+#professional-summary:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+}
+
+#professional-summary p {
+    font-size: inherit; /* Uses parent font-size */
+    text-align: justify;
+    margin: 0;
+}
+
+/* Career Goals */
+.career-goals {
+    margin-top: 50px;
+}
+
+.goals {
+    display: flex;
+    gap: 30px;
+    flex-wrap: wrap;
+}
+
+.goals-row {
+    flex: 1;
+    min-width: 300px;
+}
+
+.goals-header {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.goals-header .text {
+    font-size: clamp(1.2rem, 3vw, 1.5rem); /* Responsive sub-header size */
+    font-weight: 600;
+    color: var(--main-color);
+    white-space: nowrap;
+    margin-right: 15px;
+    letter-spacing: -0.3px;
+}
+
+.goals-header .header-line {
+    width: 100%;
+    height: 2px;
+    background: linear-gradient(90deg, var(--main-color), transparent);
+}
+
+.texts {
+    padding: 20px;
+    border-radius: 8px;
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(5px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.text-row {
+    display: flex;
+    align-items: flex-start;
+    margin-bottom: 15px;
+    padding: 10px;
+    border-radius: 5px;
+    transition: all 0.3s ease;
+    font-size: inherit; /* Uses parent font-size */
+    line-height: 1.6;
+}
+
+.text-row:hover {
+    background: rgba(255, 255, 255, 0.1);
+    transform: translateX(5px);
+}
+
+.tr-icon {
+    min-width: 8px;
+    width: 8px;
+    height: 8px;
+    background-color: var(--main-color);
+    border-radius: 50%;
+    margin-right: 15px;
+    margin-top: 8px;
+    flex-shrink: 0;
+}
+
+/* Scroll Animations */
+[data-scroll] {
+    opacity: 0;
+    transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+[data-scroll="fade-in"] {
+    transform: translateY(30px);
+}
+
+[data-scroll="fade-left"] {
+    transform: translateX(-30px);
+}
+
+[data-scroll="fade-right"] {
+    transform: translateX(30px);
+}
+
+[data-scroll].scrolled {
+    opacity: 1;
+    transform: translate(0) !important;
+}
+
+/* Enhanced Mobile Styles */
+@media (max-width: 768px) {
+    .career-main {
+        padding: 120px 15px 40px;
+    }
+    
+    .career-header {
+        flex-direction: column;
+        align-items: flex-start;
+        margin-bottom: 20px;
+    }
+    
+    .career-header .text {
+        white-space: normal;
+        margin-right: 0;
+        margin-bottom: 10px;
+    }
+    
+    .career-header .header-line {
+        width: 100%;
+    }
+    
+    #professional-summary {
+        padding: 20px;
+        margin-bottom: 30px;
+    }
+    
+    .goals {
+        gap: 20px;
+    }
+    
+    .texts {
+        padding: 15px;
+    }
+    
+    .text-row {
+        margin-bottom: 12px;
+        padding: 8px;
+    }
+    
+    .tr-icon {
+        margin-right: 12px;
+    }
+}
+
+@media (max-width: 480px) {
+    .career-main {
+        padding: 100px 12px 30px;
+    }
+    
+    .goals-row {
+        min-width: 100%;
+    }
+    
+    .goals-header {
+        margin-bottom: 15px;
+    }
+    
+    .text-row {
+        font-size: 0.95rem;
+        line-height: 1.5;
+    }
+    
+    .tr-icon {
+        margin-right: 10px;
+        margin-top: 6px;
+    }
+}
+
+/* Font Smoothing for Better Readability */
+body {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-rendering: optimizeLegibility;
+}
+
+/* Improved Font Stack */
+body, .text-row, #professional-summary p {
+    font-family: 'Poppins', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', sans-serif;
+}
+
+
+
+/* Professional Summary and Career Goals Headers with Permanent Underline */
+.ps-header .text, 
+.cg-header .text {
+    position: relative;
+    display: inline-block;
+    padding-bottom: 8px; /* Space for underline */
+    margin-bottom: 5px; /* Space between text and line */
+}
+
+.ps-header .text::after, 
+.cg-header .text::after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 3px;
+    bottom: 0;
+    left: 0;
+    background-color: var(--main-color);
+    /* Remove transform and transition for permanent line */
+    border-radius: 2px; /* Optional rounded corners */
+}
+
+/* Remove the header-line div styles since we're using the pseudo-element */
+.ps-header .header-line, 
+.cg-header .header-line {
+    display: none;
+}
+
+/* Optional: Add hover effect to make line thicker */
+.ps-header:hover .text::after,
+.cg-header:hover .text::after {
+    height: 4px;
+    background-color: #ff6b6b; /* Slightly different color on hover */
+}
+
+.ps-header .text::after, 
+.cg-header .text::after {
+    height: 3px;
+    background: linear-gradient(90deg, var(--main-color), #ff6b6b);
+}
+
+
+/* Career Page Specific Styles END */
+
+
+
 
 .footer .left {
 	font-size: 0.95rem;

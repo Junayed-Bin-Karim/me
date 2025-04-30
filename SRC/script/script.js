@@ -372,7 +372,79 @@ function animateCounters() {
 //My Milestones Numbers that tell my success story  End ...........
 
 
+// Scroll Animation Functionality
+const scrollElements = document.querySelectorAll("[data-scroll]");
 
+const elementInView = (el, dividend = 1) => {
+    const elementTop = el.getBoundingClientRect().top;
+    return (
+        elementTop <=
+        (window.innerHeight || document.documentElement.clientHeight) / dividend
+    );
+};
+
+const displayScrollElement = (element) => {
+    element.classList.add("scrolled");
+};
+
+const hideScrollElement = (element) => {
+    element.classList.remove("scrolled");
+};
+
+const handleScrollAnimation = () => {
+    scrollElements.forEach((el) => {
+        if (elementInView(el, 1.25)) {
+            displayScrollElement(el);
+        } else {
+            hideScrollElement(el);
+        }
+    });
+};
+
+// Initialize
+window.addEventListener("load", () => {
+    handleScrollAnimation();
+    // Add slight delay to ensure all elements are properly loaded
+    setTimeout(handleScrollAnimation, 300);
+});
+
+window.addEventListener("scroll", () => {
+    handleScrollAnimation();
+});
+
+// Add data-scroll attributes to your HTML elements
+document.addEventListener("DOMContentLoaded", function() {
+    const professionalSummary = document.querySelector("#professional-summary");
+    const shortTermGoals = document.querySelector(".short-term-goals");
+    const longTermGoals = document.querySelector(".long-term-goals");
+    
+    if (professionalSummary) professionalSummary.setAttribute("data-scroll", "fade-in");
+    if (shortTermGoals) shortTermGoals.setAttribute("data-scroll", "fade-left");
+    if (longTermGoals) longTermGoals.setAttribute("data-scroll", "fade-right");
+    
+    // Header scroll effect
+    const header = document.getElementById("header");
+    let lastScroll = 0;
+    
+    window.addEventListener("scroll", () => {
+        const currentScroll = window.pageYOffset;
+        
+        if (currentScroll <= 0) {
+            header.classList.remove("scrolled");
+            return;
+        }
+        
+        if (currentScroll > lastScroll && !header.classList.contains("nav-open")) {
+            // Down
+            header.classList.remove("scrolled");
+        } else if (currentScroll < lastScroll) {
+            // Up
+            header.classList.add("scrolled");
+        }
+        
+        lastScroll = currentScroll;
+    });
+});
  
 
 // After adding the Email Js APi key in the script tag of the contact.html, uncomment this function section
