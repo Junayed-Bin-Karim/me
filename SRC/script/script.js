@@ -447,6 +447,75 @@ document.addEventListener("DOMContentLoaded", function() {
 });
  
 
+
+
+
+
+
+
+
+document.addEventListener('DOMContentLoaded', function() {
+    // Check if localStorage is available
+    if (typeof(Storage) !== "undefined") {
+        // Get the current count from localStorage or initialize it
+        let count = localStorage.getItem('visitorCount');
+        
+        if (count === null) {
+            // First visit - initialize with a random number between 1000-5000
+            count = Math.floor(Math.random() * 4000) + 1000;
+        } else {
+            // Increment the count for returning visitors
+            count = parseInt(count) + 1;
+        }
+        
+        // Save the updated count
+        localStorage.setItem('visitorCount', count);
+        
+        // Animate the counter
+        animateCounter(count);
+    } else {
+        // localStorage not supported
+        document.getElementById('visitorCount').textContent = "Many";
+    }
+});
+
+function animateCounter(target) {
+    const element = document.getElementById('visitorCount');
+    const duration = 2000; // Animation duration in ms
+    const start = 0;
+    const increment = target / (duration / 16); // Roughly 60fps
+    
+    let current = start;
+    const timer = setInterval(() => {
+        current += increment;
+        if (current >= target) {
+            clearInterval(timer);
+            current = target;
+            element.classList.add('animate');
+            setTimeout(() => {
+                element.classList.remove('animate');
+            }, 500);
+        }
+        element.textContent = Math.floor(current).toLocaleString();
+    }, 16);
+}
+
+// Header scroll effect
+window.addEventListener('scroll', function() {
+    const header = document.querySelector('header');
+    if (window.scrollY > 50) {
+        header.classList.add('scrolled');
+    } else {
+        header.classList.remove('scrolled');
+    }
+});
+
+
+
+
+
+
+
 // After adding the Email Js APi key in the script tag of the contact.html, uncomment this function section
 
 function sendMail() {
