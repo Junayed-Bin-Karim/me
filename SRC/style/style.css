@@ -2937,6 +2937,35 @@ Numbers that tell my success story end >>>>>>>>>>*/
 
  
 
+/* ===== Professional Summary ===== */
+#professional-summary {
+    padding: 30px 20px; /* top-bottom: 30px, left-right: 20px */
+    margin-bottom: 50px;
+    border-radius: 10px;
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+#professional-summary:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+}
+
+#professional-summary p {
+    font-size: 0.6rem; /* very small text size */
+    text-align: justify;
+    margin: 0 0 1em 0;
+    white-space: normal;
+    word-spacing: normal;
+}
+
+
+
+
+
 
 
 /* ===== Career Section Styles ===== */
@@ -2979,15 +3008,7 @@ Numbers that tell my success story end >>>>>>>>>>*/
 
 
 
-
-/* ===== Professional Summary ===== */
  
-
-
-
-
-
-
 /* ===== Career Goals ===== */
 .career-goals {
     margin-top: 50px;
