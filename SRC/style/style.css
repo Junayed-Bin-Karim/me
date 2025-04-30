@@ -2932,50 +2932,21 @@ Numbers that tell my success story............STATS HERO */
     border-radius: 5px;
 }
 
- 
-/* Add this to your CSS */
-.navbar {
-    transition: all 0.3s ease;
-}
-
-.navbar.open {
-    display: flex !important; /* Or whatever display you want */
-    /* Other styles for open state */
-}
-
-.bx-x {
-    /* Styles for the X icon */
-}
-
-.footer {
-	width: 100%;
-	/* min-height: 50px; */
-	display: flex;
-	align-items: center;
-	justify-content: space-between;
-	flex-direction: row;
-	column-gap: 10px;
-	padding: 10px 20px;
-	border-top: 2px solid #ccc;
-	background-color: var(--main-color);
-	box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-	background: rgba(255, 255, 255, 0.1);
-	backdrop-filter: blur(4px);
-}
-/*My Milestones
+ /*My Milestones
 Numbers that tell my success story end >>>>>>>>>>*/
 
+ 
 
-/*CARRER*/
 
 
-/* Career Page Specific Styles */
+/* ===== Career Section Styles ===== */
 .career-main {
     width: 100%;
     padding: 150px 20px 50px;
     display: flex;
     justify-content: center;
-    font-size: clamp(1rem, 2vw, 1.1rem); /* Responsive base font size */
+    font-size: clamp(1rem, 2vw, 1.1rem);
+    line-height: 1.6;
 }
 
 .career-section {
@@ -2983,6 +2954,7 @@ Numbers that tell my success story end >>>>>>>>>>*/
     width: 100%;
 }
 
+/* ===== Headers ===== */
 .career-header {
     display: flex;
     align-items: center;
@@ -2990,7 +2962,7 @@ Numbers that tell my success story end >>>>>>>>>>*/
 }
 
 .career-header .text {
-    font-size: clamp(1.5rem, 4vw, 1.8rem); /* Responsive header size */
+    font-size: clamp(1.5rem, 4vw, 1.8rem);
     font-weight: 700;
     color: var(--main-color);
     white-space: nowrap;
@@ -3004,7 +2976,7 @@ Numbers that tell my success story end >>>>>>>>>>*/
     background: linear-gradient(90deg, var(--main-color), transparent);
 }
 
-/* Professional Summary */
+/* ===== Professional Summary ===== */
 #professional-summary {
     padding: 30px;
     margin-bottom: 50px;
@@ -3014,7 +2986,6 @@ Numbers that tell my success story end >>>>>>>>>>*/
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
     border: 1px solid rgba(255, 255, 255, 0.2);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
-    line-height: 1.7;
 }
 
 #professional-summary:hover {
@@ -3023,12 +2994,14 @@ Numbers that tell my success story end >>>>>>>>>>*/
 }
 
 #professional-summary p {
-    font-size: inherit; /* Uses parent font-size */
+    font-size: inherit;
     text-align: justify;
-    margin: 0;
+    margin: 0 0 1em 0;
+    white-space: normal;
+    word-spacing: normal;
 }
 
-/* Career Goals */
+/* ===== Career Goals ===== */
 .career-goals {
     margin-top: 50px;
 }
@@ -3051,7 +3024,7 @@ Numbers that tell my success story end >>>>>>>>>>*/
 }
 
 .goals-header .text {
-    font-size: clamp(1.2rem, 3vw, 1.5rem); /* Responsive sub-header size */
+    font-size: clamp(1.2rem, 3vw, 1.5rem);
     font-weight: 600;
     color: var(--main-color);
     white-space: nowrap;
@@ -3080,8 +3053,10 @@ Numbers that tell my success story end >>>>>>>>>>*/
     padding: 10px;
     border-radius: 5px;
     transition: all 0.3s ease;
-    font-size: inherit; /* Uses parent font-size */
+    font-size: inherit;
     line-height: 1.6;
+    white-space: pre-wrap; /* Preserves intentional spacing */
+    word-spacing: normal;
 }
 
 .text-row:hover {
@@ -3100,7 +3075,33 @@ Numbers that tell my success story end >>>>>>>>>>*/
     flex-shrink: 0;
 }
 
-/* Scroll Animations */
+/* ===== Header Underlines ===== */
+.ps-header .text, 
+.cg-header .text {
+    position: relative;
+    display: inline-block;
+    padding-bottom: 8px;
+    margin-bottom: 5px;
+}
+
+.ps-header .text::after, 
+.cg-header .text::after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 3px;
+    bottom: 0;
+    left: 0;
+    background: linear-gradient(90deg, var(--main-color), #ff6b6b);
+    border-radius: 2px;
+}
+
+.ps-header .header-line, 
+.cg-header .header-line {
+    display: none;
+}
+
+/* ===== Scroll Animations ===== */
 [data-scroll] {
     opacity: 0;
     transition: opacity 0.6s ease, transform 0.6s ease;
@@ -3123,7 +3124,7 @@ Numbers that tell my success story end >>>>>>>>>>*/
     transform: translate(0) !important;
 }
 
-/* Enhanced Mobile Styles */
+/* ===== Mobile Responsiveness ===== */
 @media (max-width: 768px) {
     .career-main {
         padding: 120px 15px 40px;
@@ -3140,11 +3141,7 @@ Numbers that tell my success story end >>>>>>>>>>*/
         margin-right: 0;
         margin-bottom: 10px;
     }
-    
-    .career-header .header-line {
-        width: 100%;
-    }
-    
+     
     #professional-summary {
         padding: 20px;
         margin-bottom: 30px;
@@ -3176,11 +3173,7 @@ Numbers that tell my success story end >>>>>>>>>>*/
     .goals-row {
         min-width: 100%;
     }
-    
-    .goals-header {
-        margin-bottom: 15px;
-    }
-    
+     
     .text-row {
         font-size: 0.95rem;
         line-height: 1.5;
@@ -3192,67 +3185,45 @@ Numbers that tell my success story end >>>>>>>>>>*/
     }
 }
 
-/* Font Smoothing for Better Readability */
+/* ===== Typography Enhancements ===== */
 body {
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     text-rendering: optimizeLegibility;
 }
-
-/* Improved Font Stack */
+ 
 body, .text-row, #professional-summary p {
     font-family: 'Poppins', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', sans-serif;
 }
 
 
 
-/* Professional Summary and Career Goals Headers with Permanent Underline */
-.ps-header .text, 
-.cg-header .text {
-    position: relative;
-    display: inline-block;
-    padding-bottom: 8px; /* Space for underline */
-    margin-bottom: 5px; /* Space between text and line */
+ 
+
+
+ 
+ 
+
+
+ 
+
+
+.footer {
+	width: 100%;
+	/* min-height: 50px; */
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	flex-direction: row;
+	column-gap: 10px;
+	padding: 10px 20px;
+	border-top: 2px solid #ccc;
+	background-color: var(--main-color);
+	box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+	background: rgba(255, 255, 255, 0.1);
+	backdrop-filter: blur(4px);
 }
-
-.ps-header .text::after, 
-.cg-header .text::after {
-    content: '';
-    position: absolute;
-    width: 100%;
-    height: 3px;
-    bottom: 0;
-    left: 0;
-    background-color: var(--main-color);
-    /* Remove transform and transition for permanent line */
-    border-radius: 2px; /* Optional rounded corners */
-}
-
-/* Remove the header-line div styles since we're using the pseudo-element */
-.ps-header .header-line, 
-.cg-header .header-line {
-    display: none;
-}
-
-/* Optional: Add hover effect to make line thicker */
-.ps-header:hover .text::after,
-.cg-header:hover .text::after {
-    height: 4px;
-    background-color: #ff6b6b; /* Slightly different color on hover */
-}
-
-.ps-header .text::after, 
-.cg-header .text::after {
-    height: 3px;
-    background: linear-gradient(90deg, var(--main-color), #ff6b6b);
-}
-
-
-/* Career Page Specific Styles END */
-
-
-
-
+  
 .footer .left {
 	font-size: 0.95rem;
 	font-weight: 500;
