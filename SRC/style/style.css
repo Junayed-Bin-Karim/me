@@ -3123,27 +3123,16 @@ Numbers that tell my success story end >>>>>>>>>>*/
     opacity: 1;
     transform: translate(0) !important;
 }
- 
-
-
+  
 .professional-text {
-    text-align: justify;
-    text-justify: inter-word;
-    margin: 15px 0;
-    padding: 0 10px;
-    line-height: 1.6;
+	max-width: 100%;
+	padding: 0 10px;
+	margin: 0 auto;
+	font-size: 14px;
+	line-height: 1.5;
   }
   
-  @media only screen and (max-width: 600px) {
-    .professional-text {
-      text-align: left; /* Switch to left-align on mobile */
-      margin: 10px 0;
-      padding: 0;
-      line-height: 1.5;
-      hyphens: auto; /* Enable word-breaking */
-      word-break: keep-all; /* Prevent awkward breaks */
-    }
-  }
+
 .footer {
 	width: 100%;
 	/* min-height: 50px; */
