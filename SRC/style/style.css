@@ -3123,29 +3123,8 @@ Numbers that tell my success story end >>>>>>>>>>*/
     opacity: 1;
     transform: translate(0) !important;
 }
-#professional-summary {
-    font-family: 'Segoe UI', Arial, sans-serif;
-    max-width: 800px;
-    margin: 0 auto;
-  }
-  #professional-summary p {
-    margin: 15px 0;
-    padding: 10px;
-    line-height: 1.6;
-    font-size: 16px;
-    color: #333;
-    background-color: #f9f9f9;
-    border-left: 4px solid #2c7be5;
-  }
-  @media only screen and (max-width: 600px) {
-    #professional-summary p {
-      margin: 10px 0;
-      padding: 8px;
-      font-size: 15px;
-      line-height: 1.5;
-    }
-  }
  
+
 
 
 .footer {
