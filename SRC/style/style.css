@@ -3299,6 +3299,20 @@ body, .text-row, #professional-summary p {
 
  
 
+/* Add this to handle mobile viewport sizing */
+@media (max-width: 768px) {
+    .counter-container {
+        width: 100vw; /* Use viewport width */
+        margin-left: calc(-50vw + 50%); /* Center the element properly */
+        border-radius: 0; /* Optional: remove rounded corners on mobile */
+    }
+    
+    /* Optional: if you want to maintain some spacing on mobile */
+    body {
+        padding-left: 10px;
+        padding-right: 10px;
+    }
+}
 
 .footer {
 	width: 100%;
@@ -3362,4 +3376,27 @@ body, .text-row, #professional-summary p {
 		flex-direction: column;
 		row-gap: 10px;
 	}
+}
+
+
+@media (max-width: 700px) {
+    .footer {
+        flex-direction: column;
+        row-gap: 10px;
+        width: 100vw; /* Force full viewport width */
+        margin-left: calc(-50vw + 50%); /* Center-align while full-width */
+        padding: 15px 0; /* Adjust side padding to 0 (or keep some if needed) */
+    }
+
+    .footer .left,
+    .footer .right {
+        width: 100%; /* Make text & social icons take full width */
+        text-align: center; /* Ensure text is centered */
+        justify-content: center; /* Center social icons */
+    }
+
+    /* Optional: Adjust social icons spacing if needed */
+    .footer .right {
+        gap: 15px; /* Adjust space between icons */
+    }
 }
