@@ -2277,54 +2277,21 @@ header.scrolled {
  
 /* Mobile-specific adjustments */
 @media (max-width: 768px) {
-    .project-image {
-        min-height: 200px; /* Give images more space on mobile */
-        display: flex;
-        align-items: center; /* Center vertically */
-        justify-content: center; /* Center horizontally */
-        background: #000000; /* Light background for image area */
+     .project-image img {
+        max-height: none; /* Remove height restriction on mobile */
+        width: 100%; /* Full width */
+        height: auto; /* Natural height */
     }
-
-    .project-image img {
-        max-height: none;
-        width: auto; /* Let image maintain its natural width */
-        height: auto;
-        max-width: 100%; /* Ensure it doesn't overflow container */
-        object-fit: contain;
-        border-radius: 8px 8px 0 0; /* Match card's border radius */
-    }
-
+    
     .project-card {
-        flex-direction: column;
-     }
-
-    /* Make image take more visual weight in the card */
-    .project-details {
-        padding: 1.2rem;
+        flex-direction: column; /* Stack image and details vertically */
     }
 }
 
-/* For very small devices */
+/* Optional: Add some spacing between cards on mobile */
 @media (max-width: 480px) {
     .projects-container {
-        gap: 2rem; /* Increased gap for better separation */
-    }
-
-    .project-image {
-        min-height: 180px; /* Slightly smaller on very small screens */
-    }
-
-    /* Optional: Add subtle shadow to make images pop more */
-    .project-image img {
-        box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-    }
-}
-
-/* Optional: Add hover effect for better interactivity */
-@media (hover: hover) {
-    .project-card:hover .project-image img {
-        transform: scale(1.02);
-        transition: transform 0.3s ease;
+        gap: 1.5rem;
     }
 }
  
