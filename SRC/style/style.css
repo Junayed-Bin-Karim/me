@@ -2282,7 +2282,7 @@ header.scrolled {
         display: flex;
         align-items: center; /* Center vertically */
         justify-content: center; /* Center horizontally */
-        background: #f8f8f8; /* Light background for image area */
+        background: #000000; /* Light background for image area */
     }
 
     .project-image img {
