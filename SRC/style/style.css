@@ -2773,7 +2773,7 @@ body {
 }
 
 /*  My Milestones
-Numbers that tell my success story............STATS HERO */
+Numbers that tell my success story............STATS HERE*/
 
 
 
@@ -3223,56 +3223,48 @@ body, .text-row, #professional-summary p {
 }
 
 
-
- 
-
+ /*visitor*/
 .counter-container {
 	width: 100%;
 	padding: 20px 15px;
 	margin: 5px auto;
-	background: radial-gradient(circle at 70% 50%, rgba(238,174,202,.2), rgba(145,167,192,.3));
-	backdrop-filter: blur(8px);
-	border-top: 1px solid rgba(238,174,202,.3);
-	border-bottom: 1px solid rgba(145,167,192,.3);
-	box-shadow: 0 3px 15px rgba(0,0,0,.05);
-	border-radius: 6px;
+	background: none;
+	backdrop-filter: none;
+	border: none;
+	box-shadow: none;
+	border-radius: 0;
 	color: #363636;
 	position: relative;
 	overflow: visible;
-  }
-  
-  .counter-container::before {
-	content: '';
-	position: absolute;
-	inset: 0;
-	background: rgba(255,255,255,.25);
-	z-index: -1;
-	border-radius: 6px;
-  }
-  
-  .counter-content {
+}
+
+.counter-container::before {
+	content: none;
+}
+
+.counter-content {
 	max-width: 1000px;
 	margin: auto;
 	display: flex;
 	flex-direction: column;
 	align-items: center;
 	text-align: center;
-  }
-  
-  .counter-icon {
+}
+
+.counter-icon {
 	font-size: 2.5rem;
 	margin-bottom: 10px;
-  }
-  
-  .counter-title {
+}
+
+.counter-title {
 	font-size: 1.4rem;
 	font-weight: 600;
 	margin-bottom: 8px;
 	position: relative;
 	padding-bottom: 5px;
-  }
-  
-  .counter-title::after {
+}
+
+.counter-title::after {
 	content: '';
 	position: absolute;
 	bottom: 0;
@@ -3282,18 +3274,18 @@ body, .text-row, #professional-summary p {
 	height: 2px;
 	background: var(--main-color);
 	border-radius: 2px;
-  }
-  
-  .counter-number {
+}
+
+.counter-number {
 	font-size: 2.8rem;
 	font-weight: 700;
 	margin: 10px 0;
 	font-family: 'Poppins', sans-serif;
 	letter-spacing: 1px;
 	position: relative;
-  }
-  
-  .counter-number::after {
+}
+
+.counter-number::after {
 	content: '';
 	position: absolute;
 	bottom: -10px;
@@ -3302,43 +3294,140 @@ body, .text-row, #professional-summary p {
 	width: 100px;
 	height: 3px;
 	background: linear-gradient(90deg, transparent, var(--main-color), transparent);
-  }
-  
-  .counter-label {
+}
+
+.counter-label {
 	font-size: 1rem;
 	font-weight: 500;
 	opacity: .85;
 	margin-top: 10px;
 	font-style: italic;
 	letter-spacing: .3px;
-  }
-  
-  /* Responsive */
-  @media (max-width: 768px) {
-	.counter-container { padding: 15px 10px; }
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+	.counter-container {
+		width: 100vw;
+		margin-left: calc(-50vw + 50%);
+		padding: 15px 10px;
+		border-radius: 0;
+	}
 	.counter-icon { font-size: 2rem; }
 	.counter-title { font-size: 1.2rem; }
 	.counter-number { font-size: 2.2rem; }
 	.counter-label { font-size: .95rem; }
+}
+/*visitor end*/
+
+/* ===== Fixed Experience Section ===== */
+.experience-section {
+	padding: 60px 5%;
+	margin: 40px auto;
+	max-width: 1200px;
   }
   
-
- 
-
-/* Add this to handle mobile viewport sizing */
-@media (max-width: 768px) {
-    .counter-container {
-        width: 100vw; /* Use viewport width */
-        margin-left: calc(-50vw + 50%); /* Center the element properly */
-        border-radius: 0; /* Optional: remove rounded corners on mobile */
-    }
-    
-    /* Optional: if you want to maintain some spacing on mobile */
-    body {
-        padding-left: 10px;
-        padding-right: 10px;
-    }
+  /* Title Fix - Forces visibility */
+  .section-title {
+	display: block !important;
+	opacity: 1 !important;
+	visibility: visible !important;
+	transform: none !important;
+	
+	/* Original styling */
+	text-align: center;
+	margin-bottom: 60px;
+	font-size: 2.5rem;
+	font-weight: 600;
+	color: var(--text-color);
+	
+	/* Animation-ready (optional) */
+	 transition: all 0.6s ease; 
+  }
+  
+  /* Optional: If you want the title to animate in later */
+  /* .section-title.scroll-animate {
+	opacity: 0;
+	transform: translateY(20px);
+  } */
+  
+  .experience-timeline {
+	display: flex;
+	flex-direction: column;
+	gap: 30px;
+  }
+  
+  .experience-item {
+	background: rgba(255, 255, 255, 0.05);
+	padding: 30px;
+	border-radius: 12px;
+	opacity: 0;
+	transform: translateY(30px);
+	transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+	box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+  }
+  
+  /* Rest of your styles remain the same */
+  .experience-item:hover {
+	transform: translateY(-5px);
+	background: rgba(255, 255, 255, 0.1);
+	box-shadow: 
+	  0 8px 25px rgba(0, 0, 0, 0.1),
+	  0 0 0 1px rgba(255, 255, 255, 0.1);
+  }
+  
+  .scroll-animate.show {
+	opacity: 1 !important;
+	transform: translateY(0) !important;
+  }
+  
+  /* Responsive design */
+  @media (max-width: 768px) {
+	.experience-section {
+	  padding: 40px 20px;
+	}
+	
+	.section-title {
+	  font-size: 2rem;
+	  margin-bottom: 40px;
+	}
+  }
+  .section-title {
+	position: relative;
+	display: inline-block;
 }
+
+/* Two-color underline */
+.section-title::after {
+	content: '';
+	position: absolute;
+	left: 50%;
+	bottom: -10px;
+	transform: translateX(-50%);
+	width: 80px;
+	height: 4px;
+	border-radius: 3px;
+	background: linear-gradient(90deg, #ff4e50, #1dc4e9); /* Two-color gradient */
+	background-size: 200% 100%;
+	transition: all 0.4s ease;
+}
+
+/* Optional: Hover effect */
+.section-title:hover::after {
+	width: 100px;
+	background-position: right center;
+}
+
+
+
+
+
+
+
+
+
+
+
 
 .footer {
 	width: 100%;

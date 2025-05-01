@@ -516,6 +516,58 @@ window.addEventListener('scroll', function() {
 
 
 
+
+
+
+
+  document.addEventListener('DOMContentLoaded', function() {
+    // First make sure title is immediately visible
+    const title = document.querySelector('.section-title');
+    if (title) {
+      title.style.opacity = '1';
+      title.style.transform = 'none';
+    }
+  
+    // Then handle scroll animations
+    const animateOnScroll = () => {
+      const elements = document.querySelectorAll('.scroll-animate');
+      const windowHeight = window.innerHeight;
+      
+      elements.forEach((element, index) => {
+        const elementPosition = element.getBoundingClientRect().top;
+        
+        if (elementPosition < windowHeight * 0.85) {
+          setTimeout(() => {
+            element.classList.add('show');
+          }, index * 150);
+        }
+      });
+    };
+  
+    // Run once on load
+    animateOnScroll();
+    
+    // Run on scroll with debounce
+    let scrollTimeout;
+    window.addEventListener('scroll', () => {
+      clearTimeout(scrollTimeout);
+      scrollTimeout = setTimeout(animateOnScroll, 50);
+    });
+  });
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
 // After adding the Email Js APi key in the script tag of the contact.html, uncomment this function section
 
 function sendMail() {
