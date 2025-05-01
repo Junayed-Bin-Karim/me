@@ -2269,6 +2269,34 @@ header.scrolled {
 }
 
 
+
+
+
+
+
+
+/* Mobile-specific adjustments */
+@media (max-width: 768px) {
+    .project-image img {
+        max-height: none; /* Remove height restriction on mobile */
+        width: 100%; /* Full width */
+        height: auto; /* Natural height */
+    }
+    
+    .project-card {
+        flex-direction: column; /* Stack image and details vertically */
+    }
+}
+
+/* Optional: Add some spacing between cards on mobile */
+@media (max-width: 480px) {
+    .projects-container {
+        gap: 1.5rem;
+    }
+}
+
+
+
 /* project end */
 
 
