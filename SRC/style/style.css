@@ -2277,7 +2277,7 @@ header.scrolled {
  
 /* Mobile-specific adjustments */
 @media (max-width: 768px) {
-     .project-image img {
+    .project-image img {
         max-height: none; /* Remove height restriction on mobile */
         width: 100%; /* Full width */
         height: auto; /* Natural height */
