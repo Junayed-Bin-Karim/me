@@ -2294,6 +2294,29 @@ header.scrolled {
         gap: 1.5rem;
     }
 }
+
+
+
+
+
+
+
+
+.project-image {
+    overflow: hidden;
+    position: relative;
+    aspect-ratio: 16/8.5; /* Maintain aspect ratio */
+}
+
+.project-image img {
+    width: 100%;
+    height: auto;
+    display: block;
+    transition: transform 0.5s ease;
+}
+
+
+
  
 /* project end */
 
