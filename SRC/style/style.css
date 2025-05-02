@@ -2274,21 +2274,38 @@ header.scrolled {
 
 
 
- 
+ /* Default (Desktop/Laptop) */
+.project-image {
+    overflow: hidden;
+    position: relative;
+    aspect-ratio: 16/8.5; /* Apply only on larger screens */
+}
+
+.project-image img {
+    width: 100%;
+    height: auto;
+    display: block;
+    transition: transform 0.5s ease;
+}
+
 /* Mobile-specific adjustments */
 @media (max-width: 768px) {
-    .project-image img {
-        max-height: none; /* Remove height restriction on mobile */
-        width: 100%; /* Full width */
-        height: auto; /* Natural height */
+    .project-image {
+        aspect-ratio: auto; /* Remove forced aspect ratio on mobile */
     }
-    
+
+    .project-image img {
+        max-height: none;
+        width: 100%;
+        height: auto;
+    }
+
     .project-card {
-        flex-direction: column; /* Stack image and details vertically */
+        flex-direction: column;
     }
 }
 
-/* Optional: Add some spacing between cards on mobile */
+/* Optional: Better spacing on very small screens */
 @media (max-width: 480px) {
     .projects-container {
         gap: 1.5rem;
@@ -2300,25 +2317,6 @@ header.scrolled {
 
 
 
-
-
-.project-image {
-    overflow: hidden;
-    position: relative;
-    aspect-ratio: 16/8.5; /* Maintain aspect ratio */
-}
-
-.project-image img {
-    width: 100%;
-    height: auto;
-    display: block;
-    transition: transform 0.5s ease;
-}
-
-
-
- 
-/* project end */
 
 
 
