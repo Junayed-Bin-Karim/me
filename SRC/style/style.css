@@ -2773,7 +2773,7 @@ body {
 }
 
 /*  My Milestones
-Numbers that tell my success story............STATS HERE*/
+Numbers that tell my success story............STATS HERO */
 
 
 
@@ -3223,7 +3223,8 @@ body, .text-row, #professional-summary p {
 }
 
 
- /*visitor*/
+
+  /*visitor*/
 .counter-container {
 	width: 100%;
 	padding: 20px 15px;
@@ -3318,7 +3319,19 @@ body, .text-row, #professional-summary p {
 	.counter-number { font-size: 2.2rem; }
 	.counter-label { font-size: .95rem; }
 }
+
 /*visitor end*/
+
+
+
+
+
+
+
+
+
+
+
 
 /* ===== Fixed Experience Section ===== */
 .experience-section {
@@ -3417,9 +3430,7 @@ body, .text-row, #professional-summary p {
 	width: 100px;
 	background-position: right center;
 }
-
-
-
+ 
 
 
 

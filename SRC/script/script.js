@@ -559,7 +559,10 @@ window.addEventListener('scroll', function() {
 
 
 
-
+// Add this to your scroll animations
+document.querySelectorAll('.experience-item').forEach((item, index) => {
+    item.style.transitionDelay = `${index * 0.1}s`;
+  });
 
 
 
