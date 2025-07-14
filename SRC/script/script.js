@@ -610,3 +610,22 @@ function sendMail() {
 
 
 
+
+
+
+
+
+
+
+
+
+
+function showLanguage(lang) {
+  if (lang === 'bn') {
+    document.getElementById('bn-text').style.display = 'block';
+    document.getElementById('en-text').style.display = 'none';
+  } else if (lang === 'en') {
+    document.getElementById('bn-text').style.display = 'none';
+    document.getElementById('en-text').style.display = 'block';
+  }
+}
