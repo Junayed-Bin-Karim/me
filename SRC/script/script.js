@@ -629,3 +629,11 @@ function showLanguage(lang) {
     document.getElementById('en-text').style.display = 'block';
   }
 }
+
+
+
+
+
+
+
+   
